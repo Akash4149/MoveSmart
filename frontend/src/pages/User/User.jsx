@@ -56,17 +56,22 @@ function User() {
               See all the buses near your location..
             </p>
             <div className="mt-5 flex gap-6">
-              <Button
-              onClick={()=>(Navigate('/bustracking'))}
-                sx={{
-                  borderRadius: "10px",
-                  height:'50px'
-                }}
-                variant="contained"
-              >
-                Start Tracking
-              </Button>
-              <Button variant="outlined">Help</Button>
+            <Button
+              onClick={() => Navigate('/bustracking')}
+              sx={{
+               borderRadius: "10px",
+               height: "50px",
+               transition: "transform 0.3s ease-in-out", // Smooth transition for zoom
+               "&:hover": {
+                 transform: "scale(1.1)", // Slight zoom-in effect on hover
+               },
+             }}
+             variant="contained"
+           >
+             Start Tracking
+           </Button>
+
+             
             </div>
           </div>
           <img
@@ -76,37 +81,40 @@ function User() {
             alt=""
           />
         </div>
-        <div className="w-[80%] max-w-7xl flex items-center h-96  mx-auto mb-20  justify-evenly">
-          <img
-            className="rounded-lg"
-            width={350}
-            height={350}
-            src="/bus.jpg"
-            alt=""
-          />
+        
 
-          <div className="">
-            <h1 className="font-bold flex flex-col gap-3">
-              <span className="text-6xl ">Book Buses...</span>
-            </h1>
-            <p className=" mt-4 text-xl">
-              Book buses before everyone..
-            </p>
-            <div className="mt-5 flex gap-6">
-              <Button
-              onClick={()=>{Navigate('/bookticket')}}
-                sx={{
-                  borderRadius: "10px",
-                  height:'50px'
-                }}
-                variant="contained"
-              >
-                Book Your Bus
-              </Button>
-              <Button variant="outlined">Help</Button>
-            </div>
-          </div>
-        </div>
+<div className="w-[80%] max-w-7xl flex items-center h-96 mx-auto mb-20 justify-evenly">
+  <img
+    className="rounded-lg"
+    width={350}
+    height={350}
+    src="/bus.jpg"
+    alt=""
+  />
+  <div>
+    <h1 className="font-bold flex flex-col gap-3">
+      <span className="text-6xl">Book Buses...</span>
+    </h1>
+    <p className="mt-4 text-xl">Book buses before everyone..</p>
+    <div className="mt-5 flex gap-6">
+      <Button
+        onClick={() => Navigate('/bookticket')}
+        sx={{
+          borderRadius: "10px",
+          height: "50px",
+          transition: "transform 0.3s ease-in-out",
+          "&:hover": {
+            transform: "scale(1.1)",
+          },
+        }}
+        variant="contained"
+      >
+        Book Your Bus
+      </Button>
+    </div>
+  </div>
+</div>
+
         <Footer />
       </div>
       
